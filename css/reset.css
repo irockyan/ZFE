@@ -19,8 +19,11 @@ ol {
     list-style: none;
 }
 
-button {
+button,input{
     outline: none;
+}
+
+button {
     border: none;
 }
 
