@@ -8,7 +8,7 @@ export const getFormateDate = (timeStamp, flag) => {
   let year = date.getFullYear(),
     month = date.getMonth() < 10 ? '0' + (date.getMonth() + 1) : date.getMonth(),
     day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
-  return year + ('年' || flag) + month + ('月' || flag) + day + ('日' || flag);
+  return year + (flag || '年') + month + (flag || '月') + day + (flag ? '' : '日');
 }
 
 
