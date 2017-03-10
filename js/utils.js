@@ -29,7 +29,7 @@ export const getRandom = (startNum, endNum) => {        
 export const resetRootFontSize = (designWidth) => {
   const setFontSize = () => {
     var html = document.documentElement,
-      viewWidth = html.clientWidth / designWidth / 100;
+      viewWidth = html.clientWidth / designWidth * 100;
     html.style.fontSize = viewWidth + 'px';
   }
   document.addEventListener('DOMContentLoaded', setFontSize, false);
