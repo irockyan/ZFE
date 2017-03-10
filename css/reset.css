@@ -36,15 +36,3 @@ button,
 div {
     box-sizing: border-box;
 }
-
-.clear:after {
-    display: block;
-    clear: both;
-    content: "";
-    visibility: hidden;
-    height: 0
-}
-
-.clear {
-    zoom: 1
-}
