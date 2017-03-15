@@ -15,7 +15,8 @@ dd {
 
 ul,
 ol,
-input {
+input,
+button {
   padding: 0;
 }
 
@@ -29,9 +30,11 @@ input {
   outline: none;
   border: none;
 }
-button{
-    background-color:transparent;
+
+button {
+  background-color: transparent;
 }
+
 input {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
