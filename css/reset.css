@@ -10,29 +10,32 @@ ol,
 dl,
 p,
 dd {
-    margin: 0;
+  margin: 0;
+}
+
+ul,
+ol,
+input {
+  padding: 0;
 }
 
 ul,
 ol {
-    padding: 0;
-    list-style: none;
+  list-style: none;
 }
 
-button,input{
-    outline: none;
-}
-
-button {
-    border: none;
+button,
+input {
+  outline: none;
+  border: none;
 }
 
 input {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 button,
 div {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
