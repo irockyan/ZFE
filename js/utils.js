@@ -49,9 +49,8 @@ const query = function (href, param) {
 }
 
 export default {
-  query: query,
-  getFormateDate: getFormateDate,
-  getRandom: getRandom,
-  resetRootFontSize: resetRootFontSize
-
+  query,
+  getFormateDate,
+  getRandom,
+  resetRootFontSize
 }
