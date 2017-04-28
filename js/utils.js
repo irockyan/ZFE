@@ -3,7 +3,7 @@
  * @param {*时间戳} timeStamp 
  * @param {*连接符号} flag
  */
-export const getFormateDate = (timeStamp, flag) => {
+const getFormateDate = (timeStamp, flag) => {
   const date = new Date(timeStamp);
   let year = date.getFullYear(),
     month = date.getMonth() < 10 ? '0' + (date.getMonth() + 1) : date.getMonth(),
@@ -17,7 +17,7 @@ export const getFormateDate = (timeStamp, flag) => {
  * @param {*起始数字} startNum 
  * @param {*结尾数字} endNum 
  */
-export const getRandom = (startNum, endNum) => {        
+const getRandom = (startNum, endNum) => {        
   var iChoice = endNum - startNum;        
   return Math.floor(Math.random() * iChoice + startNum);
 }
@@ -26,7 +26,7 @@ export const getRandom = (startNum, endNum) => {        
  * 重新设置根元素的大小
  * @param {*设计尺寸} designWidth 
  */
-export const resetRootFontSize = (designWidth) => {
+const resetRootFontSize = (designWidth) => {
   const setFontSize = () => {
     var html = document.documentElement,
       viewWidth = html.clientWidth / designWidth * 100;
@@ -34,4 +34,24 @@ export const resetRootFontSize = (designWidth) => {
   }
   document.addEventListener('DOMContentLoaded', setFontSize, false);
   window.onresize = setFontSize;
+}
+
+/**
+ * 获取URL中元素的值
+ */
+const query = function (href, param) {
+  var reg = new RegExp('(^|&)' + param + '=([^&]*)(&|$)', 'i');
+  var r = href.split('?')[1].match(reg);
+  if (r != null) {
+    return unescape(r[2]);
+  }
+  return null;
+}
+
+export default {
+  query: query,
+  getFormateDate: getFormateDate,
+  getRandom: getRandom,
+  resetRootFontSize: resetRootFontSize
+
 }
