@@ -48,9 +48,17 @@ const query = function (href, param) {
   return null;
 }
 
+/**
+ * 获取元素简写
+ */
+const $ = (ele) => {
+  return document.querySelector(ele);
+}
+
 export default {
   query,
   getFormateDate,
   getRandom,
-  resetRootFontSize
+  resetRootFontSize,
+  $
 }
