@@ -31,8 +31,8 @@ input,textarea {
   border: none;
 }
 
-button {
-  background-color: transparent;
+textarea {
+  resize: none;
 }
 
 input {
@@ -49,6 +49,6 @@ a{
   text-decoration: none;
 }
 
-html,body{
-  height: 100%;
+img{
+  vertical-align: middle;
 }
