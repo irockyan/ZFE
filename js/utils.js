@@ -40,8 +40,9 @@ const resetRootFontSize = (designWidth) => {
  * 获取URL中元素的值
  */
 const query = function (href, param) {
-  var reg = new RegExp('(^|&)' + param + '=([^&]*)(&|$)', 'i');
-  var r = href.split('?')[1].match(reg);
+  let reg = new RegExp('(^|&)' + param + '=([^&]*)(&|$)', 'i')
+  let paramArr = href.split('?')
+  let r = paramArr[[paramArr.length - 1]].match(reg);
   if (r != null) {
     return unescape(r[2]);
   }
