@@ -1,30 +1,35 @@
 /**
  * 获取格式话的时间
- * @param {*时间戳} timeStamp 
+ * @param {*时间戳} timeStamp
  * @param {*连接符号} flag
  */
 const getFormateDate = (timeStamp, flag) => {
   const date = new Date(timeStamp);
   let year = date.getFullYear(),
-    month = date.getMonth() < 10 ? '0' + (date.getMonth() + 1) : date.getMonth(),
-    day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
-  return year + (flag || '年') + month + (flag || '月') + day + (flag ? '' : '日');
+    month = date.getMonth() < 10
+      ? '0' + (date.getMonth() + 1)
+      : date.getMonth(),
+    day = date.getDate() < 10
+      ? '0' + date.getDate()
+      : date.getDate();
+  return year + (flag || '年') + month + (flag || '月') + day + (flag
+    ? ''
+    : '日');
 }
-
 
 /**
  * 获得随机数
- * @param {*起始数字} startNum 
- * @param {*结尾数字} endNum 
+ * @param {*起始数字} startNum
+ * @param {*结尾数字} endNum
  */
-const getRandom = (startNum, endNum) => {        
-  var iChoice = endNum - startNum;        
+const getRandom = (startNum, endNum) => {
+  var iChoice = endNum - startNum;
   return Math.floor(Math.random() * iChoice + startNum);
 }
 
 /**
  * 重新设置根元素的大小
- * @param {*设计尺寸} designWidth 
+ * @param {*设计尺寸} designWidth
  */
 const resetRootFontSize = (designWidth) => {
   const setFontSize = () => {
@@ -42,7 +47,9 @@ const resetRootFontSize = (designWidth) => {
 const query = function (href, param) {
   let reg = new RegExp('(^|&)' + param + '=([^&]*)(&|$)', 'i')
   let paramArr = href.split('?')
-  let r = paramArr[[paramArr.length - 1]].match(reg);
+  let r = paramArr[
+    [paramArr.length - 1]
+  ].match(reg);
   if (r != null) {
     return unescape(r[2]);
   }
@@ -54,6 +61,20 @@ const query = function (href, param) {
  */
 const $ = (ele) => {
   return document.querySelector(ele);
+}
+
+/**
+ * 判断是否是微信
+ */
+
+const isWechat = () => {
+  let agent = navigator
+    .userAgent
+    .toLowerCase()
+  if (agent.match(/MicroMessenger/i) === "micromessenger") {
+    return true
+  }
+  return false
 }
 
 export default {
