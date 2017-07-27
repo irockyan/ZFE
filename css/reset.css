@@ -43,7 +43,8 @@ input {
 button,
 div,
 li,
-input {
+input,
+textarea {
   box-sizing: border-box;
 }
 
