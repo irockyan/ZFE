@@ -1,18 +1,26 @@
 /**
+ * 对数字进行前位补零操作
+ * @param {*需要进行修补的数字} num
+ * @param {*需要的数字的长度} length
+ */
+let fixZero = (num, length) => {
+  if (num.touString().length >= length) {
+    return num;
+  }
+  return fixZero(`0${num}`, length)
+}
+
+/**
  * 获取格式话的时间
  * @param {*时间戳} timeStamp
  * @param {*连接符号} flag
  */
-const getFormateDate = (timeStamp, flag) => {
+const getFormatedTime = (timeStamp, flag) => {
   const date = new Date(timeStamp);
-  let year = date.getFullYear(),
-    month = date.getMonth() < 10
-      ? '0' + (date.getMonth() + 1)
-      : date.getMonth(),
-    day = date.getDate() < 10
-      ? '0' + date.getDate()
-      : date.getDate();
-  return year + (flag || '年') + month + (flag || '月') + day + (flag
+  let year = date.getFullYear()
+  let month = date.getMonth() + 1
+  let day = date.getDate()
+  return year + (flag || '年') + fixZero(month, 2) + (flag || '月') + fixZero(month, 2) + (flag
     ? ''
     : '日');
 }
@@ -77,10 +85,4 @@ const isWechat = () => {
   return false
 }
 
-export default {
-  query,
-  getFormateDate,
-  getRandom,
-  resetRootFontSize,
-  $
-}
+export {getFormatedTime, fixZero}
