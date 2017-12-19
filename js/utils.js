@@ -85,4 +85,11 @@ const isWechat = () => {
   return false
 }
 
-export {getFormatedTime, fixZero}
+/**
+ * 判断是否匹配邮箱
+ * @param {*string} string 传入的邮箱账号
+ */
+export let isEmail = (string) => {
+  let reg = /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/
+  return reg.test(string)
+}
